@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <title>Title</title>
+    <style>
+        #errorBlock
+        {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container ">
+    <!--<form id="myForm">-->
+    <div class="row A">
+        <div class="col-xl-4 cell" id="A1">
+           A1
+        </div>
+        <div class="col-xl-4 bg-warning cell" id="A2">
+            A2
+        </div>
+        <div class="col-xl-4 cell" id="A3">
+        A3
+        </div>
+    </div>
+    <div class="row B">
+        <div class="col-xl-4 cell bg-warning" id="B1">
+            B1
+        </div>
+        <div class="col-xl-4 cell" id="B2">
+            B2
+        </div>
+        <div class="col-xl-4  bg-warning  cell" id="B3">
+            B3
+        </div>
+    </div>
+    <div class="row C">
+        <div class="col-xl-4 cell" id="C1">
+            C1
+        </div>
+        <div class="col-xl-4 bg-warning cell" id="C2">
+            C2
+        </div>
+        <div class="col-xl-4 cell" id="C3">
+            C3
+        </div>
+    </div>
+    <!--</form>-->
+</div>
+
+<button type="button" id="changer" class="btn btn-primary">Ok</button>
+</body>
+
+<script>
+
+    // document.ready
+    $(function () {
+
+        $("#changer").click(function (e) {
+            //e.preventDefault();
+            console.log("Ok")
+
+            var item = $(".cell");
+            item.toggleClass("bg-warning");
+            // item.each(function () {
+            //     var t = $(this);
+            //
+            //     if (t.hasClass("bg-warning")){
+            //         t.removeClass("bg-warning");
+            //     }else {
+            //         t.addClass("bg-warning");
+            //     }
+            // })
+
+        })
+
+    })
+
+
+</script>
+
+
+
+</html>
