@@ -13,13 +13,20 @@
         #form2{
             display: none;
         }
+        #form3{
+            display: none;
+        }
+        #formResult{
+            display: none;
+        }
     </style>
 </head>
 
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col-xl-4">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xl-4">
             <div id="form1">
                 <div class="form-group">
                     <label for="lastName">Фамилия</label>
@@ -35,33 +42,110 @@
                 </div>
                 <button id="btn1" type="submit" class="btn btn-primary">Далее</button>
             </div>
+
+
             <div id="form2">
                 <div class="form-group">
-                    <label for="lastName2">Фамилия2</label>
-                    <input type="text" class="form-control" id="lastName2" placeholder="Фамилия">
+                    <label for="address">Адрес</label>
+                    <input type="text" class="form-control" id="address" placeholder="Адрес">
                 </div>
                 <div class="form-group">
-                    <label for="firstName2">Имя</label>
-                    <input type="text" class="form-control" id="firstName2" placeholder="Имя">
+                    <label for="school">ЗОШ</label>
+                    <input type="text" class="form-control" id="school" placeholder="Школа">
                 </div>
                 <div class="form-group">
-                    <label for="secondName2">Отсество</label>
-                    <input type="text" class="form-control" id="secondName2" placeholder="Отчество">
+                    <label for="education">Образоване</label>
+                    <input type="text" class="form-control" id="education" placeholder="Полное / неполное среднее">
                 </div>
                 <button id="btn2" type="submit" class="btn btn-primary">Далее</button>
             </div>
+
+
+            <div id="form3">
+                <div class="form-group">
+                    <label for="university">ВУЗ</label>
+                    <input type="text" class="form-control" id="university" placeholder="ВУЗ">
+                </div>
+                <div class="form-group">
+                    <label for="faculty">Факультет</label>
+                    <input type="text" class="form-control" id="faculty" placeholder="Факультет">
+                </div>
+                <div class="form-group">
+                    <label for="specialty">Специальность</label>
+                    <input type="text" class="form-control" id="specialty" placeholder="Специальность">
+                </div>
+                <button id="btn3" type="submit" class="btn btn-primary">Далее</button>
+            </div>
+
+
+            <div id="formResult">
+                <div class="form-group">
+                    <label class="bg-primary" for="lastNameResult">Фамилия</label>
+                    <div class="bg-transparent font-weight-bold" id="lastNameResult"></div>
+                    <!--<input type="text" class="form-control" id="lastNameResult">-->
+                </div>
+                <div class="form-group">
+                    <label class="bg-primary" for="firstNameResult">Имя</label>
+                    <div class="bg-bg-transparent font-weight-bold" id="firstNameResult"></div>
+                    <!--<input type="text" class="form-control" id="firstNameResult">-->
+                </div>
+                <div class="form-group">
+                    <label class="bg-primary" for="secondNameResult">Отсество</label>
+                    <div class="bg-bg-transparent font-weight-bold" id="secondNameResult"></div>
+                    <!--<input type="text" class="form-control" id="secondNameResult">-->
+                </div>
+                <div class="form-group">
+                    <label class="bg-primary" for="addressResult">Адрес</label>
+                    <div class="bg-transparent font-weight-bold" id="addressResult"></div>
+                    <!--<input type="text" class="form-control" id="addressResult">-->
+                </div>
+                <div class="form-group">
+                    <label class="bg-primary" for="schoolResult">ЗОШ</label>
+                    <div class="bg-transparent font-weight-bold" id="schoolResult"></div>
+                    <!--<input type="text" class="form-control" id="schoolResult">-->
+                </div>
+                <div class="form-group">
+                    <label class="bg-primary" for="educationResult">Образование</label>
+                    <div class="bg-transparent font-weight-bold" id="educationResult"></div>
+                    <!--<input type="text" class="form-control" id="educationResult">-->
+                </div>
+                <div class="form-group">
+                    <label class="bg-primary" for="universityResult">ВУЗ</label>
+                    <div class="bg-transparent font-weight-bold" id="universityResult"></div>
+                    <!--<input type="text" class="form-control" id="universityResult">-->
+                </div>
+                <div class="form-group">
+                    <label class="bg-primary" for="facultyResult">Факультет</label>
+                    <div class="bg-transparent font-weight-bold" id="facultyResult"></div>
+                    <!--<input type="text" class="form-control" id="facultyResult">-->
+                </div>
+                <div class="form-group">
+                    <label class="bg-primary" for="specialtyResult">Специальность</label>
+                    <div class="bg-transparent font-weight-bold" id="specialtyResult"></div>
+                    <!--<input type="text" class="form-control" id="specialtyResult">-->
+                </div>
+                <button id="btnGo" type="submit" class="btn btn-primary">Отправить</button>
+            </div>
+
+        </div>
+
         </div>
 
     </div>
 
-</div>
 </body>
 
 <script>
 
-    var lastName = "";
-    var firstName = null;
-    var secondName = "";
+    var lastName = document.getElementById('lastName').value;
+    var firstName = document.getElementById('firstName').value;
+    var secondName = document.getElementById('secondName').value;
+    var address = document.getElementById('address').value;
+    var school = document.getElementById('school').value;
+    var education = document.getElementById('education').value;
+    var university = document.getElementById('university').value;
+    var faculty = document.getElementById('faculty').value;
+    var specialty = document.getElementById('specialty').value;
     // document.ready
     $(function () {
         $("#btn1").click(function () {
@@ -69,7 +153,41 @@
             $("#form2").show();
             $("#btn2").click(function () {
                 //for form 2
-                alert("1234567");
+                // alert("1234567");
+                $("#form2").hide();
+                $("#form3").show();
+                $("#btn3").click(function () {
+                    //for form3
+                    $("#form3").hide();
+                    $("#formResult").show();
+
+                    // window.onload = function() {
+                        document.getElementById('lastNameResult').innerHTML = lastName;
+                        // $('#lastNameResult').html(lastName);
+                        document.getElementById('firstNameResult').innerHTML = firstName;
+                        // $('#firstNameResult').html(firstName);
+                        document.getElementById('secondNameResult').innerHTML = secondName;
+                        // $('#secondNameResult').html(secondName);
+                        document.getElementById('addressResult').innerHTML = address;
+                        // $('#addressResult').html(address);
+                        document.getElementById('schoolResult').innerHTML = school;
+                        // $('#schoolResult').html(school);
+                        document.getElementById('educationResult').innerHTML = education;
+                        // $('#educationResult').html(education);
+                        document.getElementById('universityResult').innerHTML = university;
+                        // $('#universityResult').html(university);
+                        document.getElementById('facultyResult').innerHTML = faculty;
+                        // $('#facultyResult').html(faculty);
+                        document.getElementById('specialtyResult').innerHTML = specialty;
+                        // $('#specialtyResult').html(specialty);
+
+                    // }
+
+                    $("#btnGo").click(function () {
+                        alert("Готово!")
+                    })
+                })
+
             });
         });
 
