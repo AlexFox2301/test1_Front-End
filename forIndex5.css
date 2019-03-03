@@ -1,13 +1,24 @@
-#errorBlock
+#form1
 {
-    visibility: hidden;
+    border: solid 1px red;
+    background-color:darkseagreen;
 }
 #form2{
     display: none;
+    border-width: 10px;
+    border-color: blue;
+    border-style: dashed;
+    background-color: aquamarine;
 }
 #form3{
     display: none;
+    border-width: 10px;
+    border-color: blueviolet;
+    background-color: cornflowerblue;
 }
 #formResult{
     display: none;
+    border-width: 10px;
+    border-color: brown;
+    background-color: lightgreen;
 }

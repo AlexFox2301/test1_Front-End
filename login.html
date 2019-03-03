@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="login.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <title>Login</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Site.com</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" id="log" href="#">Login</a>
+                <!--<button class="nav-link" id="log" href="#">Login<span class="sr-only">(current)</span></button>-->
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="reg" href="#">Register</a>
+            </li>
+            <li class="nav-item active logd">
+                <a class="nav-link" id="profil" href="#">Профиль</a>
+            </li>
+            <li class="nav-item logd">
+                <a class="nav-link" id="task" href="#">Задача</a>
+            </li>
+            <li class="nav-item logd">
+                <a class="nav-link" id="exit" href="#">Выход</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+    <div class="row justify-content-md-center">
+
+    <div class="col-xl-4" id="loginForm">
+        <div class="form-group">
+        <label for="login">Login</label>
+        <input id="login" class="form-control" type="text" placeholder="Login">
+    </div>
+        <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" type="password" class="form-control" placeholder="Your password">
+    </div>
+        <button class="btn btn-primary" type="submit" id="buttonLog">Отправить</button>
+    </div>
+
+    <div class="col-xl-4" id="registerForm">
+        <div class="form-group">
+        <label for="loginRegister">Login</label>
+        <input id="loginRegister" class="form-control" type="text" placeholder="Login">
+    </div>
+        <div class="form-group">
+        <label for="passwordRegister">Password</label>
+        <input id="passwordRegister" type="password" class="form-control" placeholder="Your password">
+    </div>
+        <div class="form-group">
+        <label for="passwordRepit">Password</label>
+        <input id="passwordRepit" type="password" class="form-control" placeholder="Your password">
+    </div>
+        <button class="btn btn-primary" type="submit" id="buttonReg">Отправить</button>
+    </div>
+
+        <div class="col-xl-8" id="profilForm">
+            <div class="row">
+                <div class="col-4" id="foto">
+                    <img src="Фото%20Таланов%20шенген.jpg" width="70%" alt="foto">
+                </div>
+                <div class="col-8" id="dataUser">
+
+                    <div class="row">
+                        <div class="col col-xl-3">
+                            <label class="" for="lastNameResult">Фамилия:</label></div>
+                        <div class="col col-xl-9">
+                            <div class="font-italic" id="lastNameResult"></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-3">
+                            <label class="" for="secondNameResult">Отчество:</label>
+                        </div>
+                        <div class="col-xl-9">
+                            <div class="font-italic" id="secondNameResult"></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-3">
+                            <label class="" for="addressResult">Адрес:</label>
+                        </div>
+                        <div class="col-xl-9">
+                            <div class="font-italic" id="addressResult"></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-3">
+                            <label class="" for="schoolResult">ЗОШ:</label>
+                        </div>
+                        <div class="col-xl-9">
+                            <div class="font-italic" id="schoolResult"></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-3">
+                            <label class="" for="educationResult">Образование:</label>
+                        </div>
+                        <div class="col-xl-9">
+                            <div class="font-italic" id="educationResult"></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-3">
+                            <label class="" for="universityResult">ВУЗ:</label>
+                        </div>
+                        <div class="col-xl-9">
+                            <div class="font-italic" id="universityResult"></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-3">
+                            <label class="" for="facultyResult">Факультет:</label>
+                        </div>
+                        <div class="col-xl-9">
+                            <div class="font-italic" id="facultyResult"></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-3">
+                            <label class="" for="specialtyResult">Специальность:</label>
+                        </div>
+                        <div class="col-xl-9">
+                            <div class="font-italic" id="specialtyResult"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+
+    <script>
+
+    var login = null;
+    var password = null;
+
+    var loginRegister = null;
+    var passwordRegister = null;
+    var passwordRepit = null;
+
+    var lastName = "Таланов";
+    var firstName = "Артем";
+    var secondName = "Александрович";
+    var address = "Вокзальная";
+    var school = "№44";
+    var education = "Высшее";
+    var university = "КНУСА";
+    var faculty = "Инженерная механика";
+    var specialty = "Строительные машины";
+
+    $(function () {
+        console.log("start");
+        $("#log").click(function () {
+            $("#registerForm").hide();
+            $("#loginForm").show();
+            $(".nav-item").toggleClass("active");
+            console.log("login")
+        });
+
+        $("#buttonLog").click(function () {
+            login = $("#login").val();
+            password = $("#password").val();
+            if (login === ""){
+                alert("Не заполнены поля");
+                return;}
+            if (password === ""){
+                alert("Не заполнены поля");
+                return;}
+            alert("Отправлено!");
+            $(".nav-item").toggleClass("logd");
+
+            $("#loginForm").hide();
+            $('#lastNameResult').text(lastName);
+            $('#firstNameResult').text(firstName);
+            $('#secondNameResult').text(secondName);
+            $('#addressResult').text(address);
+            $('#schoolResult').text(school);
+            $('#educationResult').text(education);
+            $('#universityResult').text(university);
+            $('#facultyResult').text(faculty);
+            $('#specialtyResult').text(specialty);
+            $("#profilForm").show();
+
+        })
+
+        $("#reg").click(function () {
+            $("#loginForm").hide();
+            $("#registerForm").show();
+            $(".nav-item").toggleClass("active");
+        })
+
+        $("#buttonReg").click(function () {
+            loginRegister = $("#loginRegister").val();
+            passwordRegister = $("#passwordRegister").val();
+            passwordRepit = $("#passwordRepit").val();
+            console.log(passwordRegister);
+            console.log(passwordRepit);
+            if (passwordRegister === ""){
+                    alert("Не заполнены поля");
+                    return;}
+            if (passwordRepit === ""){
+                alert("Не заполнены поля");
+                return;}
+            if (passwordRegister === passwordRepit) {
+                alert("Отправлено!");
+                return;}
+            else {alert("Введенные поля паролей не совпадают");}
+
+
+        })
+    })
+</script>
+
+</body>
+</html>

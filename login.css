@@ -1,0 +1,22 @@
+#loginForm{
+    /*display: none;*/
+    background-color: lightgreen;
+    border: solid gray 1px;
+    align-content: center;
+}
+
+#registerForm{
+    display: none;
+    background-color: lightblue;
+    border: solid gray 1px;
+}
+
+.logd{
+    display: none;
+}
+
+#profilForm{
+    display: none;
+    background-color: lightgray;
+    border: solid gray 1px;
+}

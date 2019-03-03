@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-xl-4">
+            <div class="col-xl-12 border">
             <div id="form1">
                 <div class="form-group">
                     <label for="lastName">Фамилия</label>
@@ -66,51 +66,43 @@
             </div>
 
 
-            <div id="formResult">
-                <div class="form-group">
-                    <label class="bg-primary" for="lastNameResult">Фамилия</label>
-                    <div class="bg-transparent font-weight-bold border" id="lastNameResult"></div>
-                    <!--<input type="text" class="form-control" id="lastNameResult">-->
+            <div class="col-xl-10 font-weight-bold" id="formResult">
+                <div class="col-3">
+                    <label class="" for="lastNameResult">Фамилия:</label>
+                    <div class="font-italic" id="lastNameResult"></div>
                 </div>
-                <div class="form-group">
-                    <label class="bg-primary" for="firstNameResult">Имя</label>
-                    <div class="bg-bg-transparent font-weight-bold" id="firstNameResult"></div>
-                    <!--<input type="text" class="form-control" id="firstNameResult">-->
+
+                <div class="col-sm-4">
+                    <label class="" for="firstNameResult">Имя:</label>
+                    <div class="font-italic" id="firstNameResult"></div>
                 </div>
-                <div class="form-group">
-                    <label class="bg-primary" for="secondNameResult">Отсество</label>
-                    <div class="bg-bg-transparent font-weight-bold" id="secondNameResult"></div>
-                    <!--<input type="text" class="form-control" id="secondNameResult">-->
+                <div class="col-sm-4">
+                    <label class="" for="secondNameResult">Отсество:</label>
+                    <div class="font-italic" id="secondNameResult"></div>
                 </div>
-                <div class="form-group">
-                    <label class="bg-primary" for="addressResult">Адрес</label>
-                    <div class="bg-transparent font-weight-bold" id="addressResult"></div>
-                    <!--<input type="text" class="form-control" id="addressResult">-->
+                <div class="col-xl-4">
+                    <label class="" for="addressResult">Адрес:</label>
+                    <div class="font-italic" id="addressResult"></div>
                 </div>
-                <div class="form-group">
-                    <label class="bg-primary" for="schoolResult">ЗОШ</label>
-                    <div class="bg-transparent font-weight-bold" id="schoolResult"></div>
-                    <!--<input type="text" class="form-control" id="schoolResult">-->
+                <div class="col-xl-4">
+                    <label class="" for="schoolResult">ЗОШ:</label>
+                    <div class="font-italic" id="schoolResult"></div>
                 </div>
-                <div class="form-group">
-                    <label class="bg-primary" for="educationResult">Образование</label>
-                    <div class="bg-transparent font-weight-bold" id="educationResult"></div>
-                    <!--<input type="text" class="form-control" id="educationResult">-->
+                <div class="col-xl-4">
+                    <label class="" for="educationResult">Образование:</label>
+                    <div class="font-italic" id="educationResult"></div>
                 </div>
-                <div class="form-group">
-                    <label class="bg-primary" for="universityResult">ВУЗ</label>
-                    <div class="bg-transparent font-weight-bold" id="universityResult"></div>
-                    <!--<input type="text" class="form-control" id="universityResult">-->
+                <div class="col-xl-4">
+                    <label class="" for="universityResult">ВУЗ:</label>
+                    <div class="font-italic" id="universityResult"></div>
                 </div>
-                <div class="form-group">
-                    <label class="bg-primary" for="facultyResult">Факультет</label>
-                    <div class="bg-transparent font-weight-bold" id="facultyResult"></div>
-                    <!--<input type="text" class="form-control" id="facultyResult">-->
+                <div class="col-xl-4">
+                    <label class="" for="facultyResult">Факультет:</label>
+                    <div class="font-italic" id="facultyResult"></div>
                 </div>
-                <div class="form-group">
-                    <label class="bg-primary" for="specialtyResult">Специальность</label>
-                    <div class="bg-transparent font-weight-bold" id="specialtyResult"></div>
-                    <!--<input type="text" class="form-control" id="specialtyResult">-->
+                <div class="col-xl-4">
+                    <label class="" for="specialtyResult">Специальность:</label>
+                    <div class="font-italic" id="specialtyResult"></div>
                 </div>
                 <button id="btnBackGo" type="submit" class="btn btn-primary">Назад</button>
                 <button id="btnGo" type="submit" class="btn btn-primary">Отправить</button>
@@ -125,74 +117,79 @@
 </body>
 
 <script>
-    var lastName = document.getElementById('lastName').value;
-    var firstName = document.getElementById('firstName').value;
-    var secondName = document.getElementById('secondName').value;
-    var address = document.getElementById('address').value;
-    var school = document.getElementById('school').value;
-    var education = document.getElementById('education').value;
-    var university = document.getElementById('university').value;
-    var faculty = document.getElementById('faculty').value;
-    var specialty = document.getElementById('specialty').value;
+    var lastName;// = $('#lastName').val();
+    var firstName;// = $('#firstName').val();
+    var secondName;// = $('#secondName').val();
+    var address;// = document.getElementById('address').value;
+    var school;// = document.getElementById('school').value;
+    var education;// = document.getElementById('education').value;
+    var university;// = document.getElementById('university').value;
+    var faculty;// = document.getElementById('faculty').value;
+    var specialty;// = document.getElementById('specialty').value;
 
                     // window.onload = function() {
-    document.getElementById('lastNameResult').innerHTML = lastName;
-    document.getElementById('firstNameResult').innerHTML = firstName;
-    document.getElementById('secondNameResult').innerHTML = secondName;
-    document.getElementById('addressResult').innerHTML = address;
-    document.getElementById('schoolResult').innerHTML = school;
-    document.getElementById('educationResult').innerHTML = education;
-    document.getElementById('universityResult').innerHTML = university;
-    document.getElementById('facultyResult').innerHTML = faculty;
-    document.getElementById('specialtyResult').innerHTML = specialty;
+    // document.getElementById('lastNameResult').innerHTML = lastName;
+    // document.getElementById('firstNameResult').innerHTML = firstName;
+    // document.getElementById('secondNameResult').innerHTML = secondName;
+    // document.getElementById('addressResult').innerHTML = address;
+    // document.getElementById('schoolResult').innerHTML = school;
+    // document.getElementById('educationResult').innerHTML = education;
+    // document.getElementById('universityResult').innerHTML = university;
+    // document.getElementById('facultyResult').innerHTML = faculty;
+    // document.getElementById('specialtyResult').innerHTML = specialty;
 
     $(function () {
         $("#btn1").click(function () {
+            lastName = $('#lastName').val();
+            firstName = $('#firstName').val();
+            secondName = $('#secondName').val();
             $("#form1").hide();
             $("#form2").show();
         })
-    })
-
-    $(function () {
         $("#btn2").click(function () {
+            address = $('#address').val();
+            school = $('#school').val();
+            education = $('#education').val();
+
             $("#form2").hide();
             $("#form3").show();
         })
-    })
-
-    $(function () {
         $("#btn3").click(function () {
+            university = $('#university').val();
+            faculty = $('#faculty').val();
+            specialty = $('#specialty').val();
+
+
+            $('#lastNameResult').text(lastName);
+            $('#firstNameResult').text(firstName);
+            $('#secondNameResult').text(secondName);
+            $('#addressResult').text(address);
+            $('#schoolResult').text(school);
+            $('#educationResult').text(education);
+            $('#universityResult').text(university);
+            $('#facultyResult').text(faculty);
+            $('#specialtyResult').text(specialty);
             $("#form3").hide();
             $("#formResult").show();
         })
-    })
-
-    $(function () {
         $("#btnBack2").click(function () {
             $("#form2").hide();
             $("#form1").show();
         })
-    })
-
-    $(function () {
         $("#btnBack3").click(function () {
             $("#form3").hide();
             $("#form2").show();
         })
-    })
-
-    $(function () {
         $("#btnBackGo").click(function () {
             $("#formResult").hide();
             $("#form3").show();
         })
-    })
-
-    $(function () {
         $("#btnGo").click(function () {
             alert("Готово!");
         })
     })
+
+
 
 </script>
 
