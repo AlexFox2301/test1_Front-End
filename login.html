@@ -19,18 +19,21 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-            <li class="nav-item active">
+            <li class="nav-item active bg-secondary">
                 <a class="nav-link" id="log" href="#">Login</a>
                 <!--<button class="nav-link" id="log" href="#">Login<span class="sr-only">(current)</span></button>-->
             </li>
             <li class="nav-item">
                 <a class="nav-link" id="reg" href="#">Register</a>
             </li>
-            <li class="nav-item active logd">
+            <li class="nav-item active bg-secondary logd">
                 <a class="nav-link" id="profil" href="#">Профиль</a>
             </li>
             <li class="nav-item logd">
-                <a class="nav-link" id="task" href="#">Задача</a>
+                <a class="nav-link" id="resume" href="#">Резюме</a>
+            </li>
+            <li class="nav-item logd">
+                <a class="nav-link" id="task" href="#">Задачи</a>
             </li>
             <li class="nav-item logd">
                 <a class="nav-link" id="exit" href="#">Выход</a>
@@ -41,7 +44,7 @@
 
     <div class="row justify-content-md-center">
 
-    <div class="col-xl-4" id="loginForm">
+        <div class="col-xl-4" id="loginForm">
         <div class="form-group">
         <label for="login">Login</label>
         <input id="login" class="form-control" type="text" placeholder="Login">
@@ -53,7 +56,7 @@
         <button class="btn btn-primary" type="submit" id="buttonLog">Отправить</button>
     </div>
 
-    <div class="col-xl-4" id="registerForm">
+        <div class="col-xl-4" id="registerForm">
         <div class="form-group">
         <label for="loginRegister">Login</label>
         <input id="loginRegister" class="form-control" type="text" placeholder="Login">
@@ -74,6 +77,7 @@
                 <div class="col-4" id="foto">
                     <img src="Фото%20Таланов%20шенген.jpg" width="70%" alt="foto">
                 </div>
+
                 <div class="col-8" id="dataUser">
 
                     <div class="row">
@@ -146,11 +150,112 @@
                             <div class="font-italic" id="specialtyResult"></div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
 
-</div>
+        <div class="col-xl-10" id="resumeForm">
+            <table id="resumeTable">
+                <thead>
+                    <tr>
+                        <th width="10%">Дата поступления</th>
+                        <th width="10%">Дата увольнения</th>
+                        <th width="20%">Место работы</th>
+                        <th width="20%">Должность</th>
+                        <th width="">Обязаности</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-xl-10" id="taskForm">
+            <table id="taskTable">
+                <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Дата поступления</th>
+                    <th>Дата выполнения</th>
+                    <th>Наиенование</th>
+                    <th>Объём</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
 
     <script>
 
@@ -176,7 +281,7 @@
         $("#log").click(function () {
             $("#registerForm").hide();
             $("#loginForm").show();
-            $(".nav-item").toggleClass("active");
+            $(".nav-item").toggleClass("active bg-secondary");
             console.log("login")
         });
 
@@ -209,7 +314,7 @@
         $("#reg").click(function () {
             $("#loginForm").hide();
             $("#registerForm").show();
-            $(".nav-item").toggleClass("active");
+            $(".nav-item").toggleClass("active bg-secondary");
         })
 
         $("#buttonReg").click(function () {
@@ -231,6 +336,43 @@
 
 
         })
+        
+        $("#resume").click(function () {
+            $("#profilForm").hide();
+            $("#taskForm").hide();
+            $("#resumeForm").show();
+            $("#resume").parent().addClass("activ bg-secondary");
+            $("#task").parent().removeClass("activ bg-secondary");
+            $("#profil").parent().removeClass("activ bg-secondary");
+        })
+
+        $("#task").click(function () {
+            $("#profilForm").hide();
+            $("#resumeForm").hide();
+            $("#taskForm").show();
+            $("#task").parent().addClass("activ bg-secondary");
+            $("#resume").parent().removeClass("activ bg-secondary");
+            $("#profil").parent().removeClass("activ bg-secondary");
+        })
+
+        $("#profil").click(function () {
+            $("#profilForm").show();
+            $("#resumeForm").hide();
+            $("#taskForm").hide();
+            $("#profil").parent().addClass("activ bg-secondary");
+            $("#task").parent().removeClass("activ bg-secondary");
+            $("#resume").parent().removeClass("activ bg-secondary");
+        })
+
+        $("#exit").click(function () {
+            $("#profilForm").hide();
+            $("#resumeForm").hide();
+            $("#taskForm").hide();
+            $(".nav-item").toggleClass("logd");
+            $("#loginForm").show();
+            $("#log").parent().addClass("activ bg-secondary")
+        })
+        
     })
 </script>
 

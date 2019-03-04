@@ -2,13 +2,36 @@
     /*display: none;*/
     background-color: lightgreen;
     border: solid gray 1px;
+    border-radius: 15px;
     align-content: center;
 }
 
 #registerForm{
     display: none;
     background-color: lightblue;
+    border-radius: 15px;
     border: solid gray 1px;
+}
+
+#profilForm{
+    display: none;
+    background-color: lightcyan;
+    border: solid gray 1px;
+    border-radius: 15px;
+}
+
+#resumeForm{
+    display: none;
+    background-color: lightyellow;
+    border: solid gray 1px;
+    border-radius: 15px;
+}
+
+#taskForm{
+    display: none;
+    background-color: aliceblue;
+    border: solid gray 1px;
+    border-radius: 15px;
 }
 
 .logd{
