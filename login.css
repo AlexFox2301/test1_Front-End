@@ -43,3 +43,14 @@
     background-color: lightgray;
     border: solid gray 1px;
 }
+
+.resumeTable{
+    border: solid 2px gray;
+    text-align: center;
+}
+
+#addJobForm{
+    display: none;
+    background-color: lightsalmon;
+    border: solid gray 1px;
+}

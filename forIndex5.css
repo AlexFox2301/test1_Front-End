@@ -1,13 +1,29 @@
-#errorBlock
+#cont{
+    margin: 20px;
+    padding: 15px;
+}
+
+#form1
 {
-    visibility: hidden;
+    background-color: lightcyan;
+
 }
 #form2{
     display: none;
+    background-color: lavender;
+
 }
 #form3{
     display: none;
+    background-color: lavenderblush;
+
 }
 #formResult{
     display: none;
+    background-color: lightgreen;
+
+}
+
+.resultLabel{
+    font-size: 16px;
 }
