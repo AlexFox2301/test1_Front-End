@@ -4,6 +4,7 @@
     border: solid gray 1px;
     border-radius: 15px;
     align-content: center;
+    padding: 10px;
 }
 
 #registerForm{
@@ -11,6 +12,7 @@
     background-color: lightblue;
     border-radius: 15px;
     border: solid gray 1px;
+    padding: 10px;
 }
 
 #profilForm{
@@ -18,6 +20,7 @@
     background-color: lightcyan;
     border: solid gray 1px;
     border-radius: 15px;
+    padding: 10px;
 }
 
 #resumeForm{
@@ -25,6 +28,7 @@
     background-color: lightyellow;
     border: solid gray 1px;
     border-radius: 15px;
+    padding: 10px;
 }
 
 #taskForm{
@@ -32,6 +36,7 @@
     background-color: aliceblue;
     border: solid gray 1px;
     border-radius: 15px;
+    padding: 10px;
 }
 
 .logd{
@@ -42,15 +47,31 @@
     display: none;
     background-color: lightgray;
     border: solid gray 1px;
+    padding: 10px;
 }
 
 .resumeTable{
     border: solid 2px gray;
     text-align: center;
+    padding: 10px;
 }
 
 #addJobForm{
     display: none;
-    background-color: lightsalmon;
+    margin: 20px;
+    padding: 20px;
+    position: absolute;
+    background-color: #e0ffb3;
     border: solid gray 1px;
+    border-radius: 10px;
+}
+
+#addTaskForm{
+    display: none;
+    margin: 20px;
+    padding: 20px;
+    position: absolute;
+    background-color: #d8fffc;
+    border: solid gray 1px;
+    border-radius: 10px;
 }

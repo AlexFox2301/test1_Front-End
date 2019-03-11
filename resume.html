@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <div v-if="showForm">
+        Enter Name:
+        <input type="text" v-model="enterName">
+        <button v-on:click="Ok">Ok</button>
+    </div>
+    <div v-else>
+        <table border="1">
+            <tr>
+                <!--header-->
+            </tr>
+            <tr v-for="item in resumeItems">
+                <td>{{item.name}}</td>
+            </tr>
+        </table>
+        <button v-on:click="Show">Add Resume Item</button>
+    </div>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            showForm: false,
+            enterName: "",
+            resumeItems: [
+                {name: "asd"}
+            ],
+        },
+        methods: {
+            Show() {
+                this.enterName = "";
+                this.showForm = true;
+            },
+            Ok() {
+                this.showForm = false;
+                this.resumeItems.push({name: this.enterName});
+
+            },
+        }
+    });
+</script>
+</body>
+</html>

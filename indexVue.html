@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <div title="ppooo">Enter password to get secret promo!</div>
+        <div v-if="secret">promo code na 15%</div>
+        <input type="text" v-model = "message">
+        <input type="button" @click="onClick" value="GO">
+        <table>
+            <tr>
+                <th>id</th>
+                <th>content</th>
+            </tr>
+            <tr v-for="q in test">
+                <td>{{q.id}}</td>
+                <td>{{q.content}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: '',
+            secret: false,
+            test: [
+                {id: 1, content: 2},
+                {id: 7, content: 8},
+                {id: "qweasd", content: "qazwsx"},
+            ],
+        },
+        methods : {
+            onClick() {
+                if (this.message === "qwerty") {
+                    this.secret = true;
+                }
+                this.test.push({id:12, content: "super"});
+            },
+        }
+    })
+    </script>
+</body>
+</html>

@@ -26,7 +26,7 @@
             <li class="nav-item">
                 <a class="nav-link" id="reg" href="#">Register</a>
             </li>
-            <li class="nav-item active bg-secondary logd">
+            <li class="nav-item bg-secondary logd">
                 <a class="nav-link" id="profil" href="#">Профиль</a>
             </li>
             <li class="nav-item logd">
@@ -243,33 +243,6 @@
             <button class="btn btn-primary" type="submit" id="btnAddJob">Добавить</button>
         </div>
 
-        <div class="col-xl-10" id="taskForm">
-            <table class="resumeTable" id="taskTable">
-                <thead>
-                <tr>
-                    <th>№</th>
-                    <th class="resumeTable" width="15%">Дата поступления</th>
-                    <th class="resumeTable" width="15%">Дата выполнения</th>
-                    <th class="resumeTable" width="35%">Наиенование</th>
-                    <th class="resumeTable" width="35%">Объём</th>
-                </tr>
-                </thead>
-                <tbody>
-
-                <tr>
-                    <td class="resumeTable">1</td>
-                    <td class="resumeTable">Вчера</td>
-                    <td class="resumeTable">Завтра</td>
-                    <td class="resumeTable">Работа</td>
-                    <td class="resumeTable">Дофига</td>
-                </tr>
-
-                </tbody>
-            </table>
-            <br>
-            <button class="btn btn-primary" type="submit" id="btnAddTask">Добавить</button>
-        </div>
-
         <div class="col-ml-4" id="addJobForm">
             <div class="row">
                 <div class="col-5">
@@ -309,6 +282,84 @@
                 </div>
                 <div class="col-5">
                     <input id="duty" type="text" placeholder="Обязаности">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-5">
+                    <button class="btn btn-primary" type="submit" id="btnAddJobToForm">Добавить</button>
+                </div>
+                <div class="col-5">
+                    <button class="btn btn-primary" type="submit" id="btnNotAddJob">Отменить</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-10" id="taskForm">
+            <table class="resumeTable" id="taskTable">
+                <thead>
+                <tr>
+                    <th>№</th>
+                    <th class="resumeTable" width="15%">Дата поступления</th>
+                    <th class="resumeTable" width="15%">Дата выполнения</th>
+                    <th class="resumeTable" width="35%">Наиенование</th>
+                    <th class="resumeTable" width="35%">Объём</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr>
+                    <td class="resumeTable">1</td>
+                    <td class="resumeTable">Вчера</td>
+                    <td class="resumeTable">Завтра</td>
+                    <td class="resumeTable">Работа</td>
+                    <td class="resumeTable">Дофига</td>
+                </tr>
+
+                </tbody>
+            </table>
+            <br>
+            <button class="btn btn-primary" type="submit" id="btnAddTask">Добавить</button>
+        </div>
+
+        <div class="col-ml-4" id="addTaskForm">
+            <div class="row">
+                <div class="col-5">
+                    <label for="dateStartTask">Дата поступления</label>
+                </div>
+                <div class="col-5">
+                    <input id="dateStartTask" type="text" placeholder="Дата поступления">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-5">
+                    <label for="dateEndTask">Дата выполнения</label>
+                </div>
+                <div class="col-5">
+                    <input id="dateEndTask" type="text" placeholder="Дата выполнения">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-5">
+                    <label for="taskName">Наименование</label>
+                </div>
+                <div class="col-5">
+                    <input id="taskName" type="text" placeholder="Наименование">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-5">
+                    <label for="taskValue">Объем</label>
+                </div>
+                <div class="col-5">
+                    <input id="taskValue" type="text" placeholder="Объем">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-5">
+                    <button class="btn btn-primary" type="submit" id="btnAddTaskToForm">Добавить</button>
+                </div>
+                <div class="col-5">
+                    <button class="btn btn-primary" type="submit" id="btnNotAddTask">Отменить</button>
                 </div>
             </div>
         </div>
@@ -368,7 +419,7 @@
             if (password === ""){
                 alert("Не заполнены поля");
                 return;}
-            alert("Отправлено!");
+            //alert("Отправлено!");
             $(".nav-item").toggleClass("logd");
 
             $("#loginForm").hide();
@@ -381,6 +432,7 @@
             $('#universityResult').text(university);
             $('#facultyResult').text(faculty);
             $('#specialtyResult').text(specialty);
+            $("#profil").addClass("activ");
             $("#profilForm").show();
 
         })
@@ -439,6 +491,13 @@
         })
 
         $("#exit").click(function () {
+            login = null;
+            password = null;
+            $("#login").val("");
+            $("#password").val("");
+            $("#profil").parent().addClass("activ bg-secondary");
+            $("#task").parent().removeClass("activ bg-secondary");
+            $("#resume").parent().removeClass("activ bg-secondary");
             $("#profilForm").hide();
             $("#resumeForm").hide();
             $("#taskForm").hide();
@@ -448,7 +507,27 @@
         })
 
         $("#btnAddJob").click(function () {
-            window.open();
+            $("#addJobForm").show();
+        })
+
+        $("#btnAddJobToForm").click(function () {
+            $("#addJobForm").hide();
+        })
+
+        $("#btnNotAddJob").click(function () {
+            $("#addJobForm").hide();
+        })
+
+        $("#btnAddTask").click(function () {
+            $("#addTaskForm").show();
+        })
+
+        $("#btnAddTaskToForm").click(function () {
+            $("#addTaskForm").hide();
+        })
+
+        $("#btnNotAddTask").click(function () {
+            $("#addTaskForm").hide();
         })
 
 
