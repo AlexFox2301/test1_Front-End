@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="login.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title>Login</title>
 </head>
 
@@ -168,73 +169,81 @@
                 </thead>
                 <tbody>
 
-                    <tr>
-                        <td class="resumeTable">05.2007</td>
-                        <td class="resumeTable">03.2008</td>
-                        <td class="resumeTable">ПКТБ «Промстроймонтаж»</td>
-                        <td class="resumeTable">Инженер-конструктор</td>
-                        <td class="resumeTable">Разработка ППР</td>
-                    </tr>
-                    <tr>
-                        <td class="resumeTable">04.2008</td>
-                        <td class="resumeTable">10.2008</td>
-                        <td class="resumeTable">ООО «СУ-77» </td>
-                        <td class="resumeTable">Инженер-проектировщик</td>
-                        <td class="resumeTable">Разработка ППР</td>
-                    </tr>
-                    <tr>
-                        <td class="resumeTable">10.2008</td>
-                        <td class="resumeTable">08-2009</td>
-                        <td class="resumeTable">ЧП «Подводтехстройпроект»</td>
-                        <td class="resumeTable">Инженер-конструкор</td>
-                        <td class="resumeTable">Разработка ППР</td>
-                    </tr>
-                    <tr>
-                        <td class="resumeTable">09.2009</td>
-                        <td class="resumeTable">09.2010</td>
-                        <td class="resumeTable">ООО «СУ-77»</td>
-                        <td class="resumeTable">Инженер-проектировщик</td>
-                        <td class="resumeTable">Разработка ППР</td>
-                    </tr>
-                    <tr>
-                        <td class="resumeTable">09.2010</td>
-                        <td class="resumeTable">06.2011</td>
-                        <td class="resumeTable">ЧП «СВБ Проект»</td>
-                        <td class="resumeTable">Инженер-проектировщик</td>
-                        <td class="resumeTable">Разработка ППР</td>
-                    </tr>
-                    <tr>
-                        <td class="resumeTable">01.2012</td>
-                        <td class="resumeTable">07.2017</td>
-                        <td class="resumeTable">ООО «МКФ»</td>
-                        <td class="resumeTable">Инженер-конструктор</td>
-                        <td class="resumeTable">Разработка ППР, КМД</td>
-                    </tr>
-                    <tr>
-                        <td class="resumeTable">07.2012</td>
-                        <td class="resumeTable">04.2013</td>
-                        <td class="resumeTable">ЧП «Белоус»</td>
-                        <td class="resumeTable">Технолог</td>
-                        <td class="resumeTable">Разработка технологической
-                            документации на изготовление индивидуальной корпусной
-                            мебели</td>
-                    </tr>
-                    <tr>
-                        <td class="resumeTable">06.2013</td>
-                        <td class="resumeTable">05.2015</td>
-                        <td class="resumeTable">ЧП «Росошинский»</td>
-                        <td class="resumeTable">Технолог</td>
-                        <td class="resumeTable">Разработка технологической
-                            документации на изготовление индивидуальной корпусной
-                            мебели</td>
-                    </tr>
-                    <tr>
-                        <td class="resumeTable">10.2015</td>
-                        <td class="resumeTable">-</td>
-                        <td class="resumeTable">ООО НПП «МИТЭК»</td>
-                        <td class="resumeTable">Инженер-проектировщик</td>
-                        <td class="resumeTable">Разработка проектной документации </td>
-                    </tr>
+                <tr v-for="job in jobs">
+                    <td>{{job.dateStart}}</td>
+                    <td>{{job.dateEnd}}</td>
+                    <td>{{job.jobName}}</td>
+                    <td>{{job.position}}</td>
+                    <td>{{job.duty}}</td>
+                </tr>
+
+                    <!--<tr>-->
+                        <!--<td class="resumeTable">05.2007</td>-->
+                        <!--<td class="resumeTable">03.2008</td>-->
+                        <!--<td class="resumeTable">ПКТБ «Промстроймонтаж»</td>-->
+                        <!--<td class="resumeTable">Инженер-конструктор</td>-->
+                        <!--<td class="resumeTable">Разработка ППР</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="resumeTable">04.2008</td>-->
+                        <!--<td class="resumeTable">10.2008</td>-->
+                        <!--<td class="resumeTable">ООО «СУ-77» </td>-->
+                        <!--<td class="resumeTable">Инженер-проектировщик</td>-->
+                        <!--<td class="resumeTable">Разработка ППР</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="resumeTable">10.2008</td>-->
+                        <!--<td class="resumeTable">08-2009</td>-->
+                        <!--<td class="resumeTable">ЧП «Подводтехстройпроект»</td>-->
+                        <!--<td class="resumeTable">Инженер-конструкор</td>-->
+                        <!--<td class="resumeTable">Разработка ППР</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="resumeTable">09.2009</td>-->
+                        <!--<td class="resumeTable">09.2010</td>-->
+                        <!--<td class="resumeTable">ООО «СУ-77»</td>-->
+                        <!--<td class="resumeTable">Инженер-проектировщик</td>-->
+                        <!--<td class="resumeTable">Разработка ППР</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="resumeTable">09.2010</td>-->
+                        <!--<td class="resumeTable">06.2011</td>-->
+                        <!--<td class="resumeTable">ЧП «СВБ Проект»</td>-->
+                        <!--<td class="resumeTable">Инженер-проектировщик</td>-->
+                        <!--<td class="resumeTable">Разработка ППР</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="resumeTable">01.2012</td>-->
+                        <!--<td class="resumeTable">07.2017</td>-->
+                        <!--<td class="resumeTable">ООО «МКФ»</td>-->
+                        <!--<td class="resumeTable">Инженер-конструктор</td>-->
+                        <!--<td class="resumeTable">Разработка ППР, КМД</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="resumeTable">07.2012</td>-->
+                        <!--<td class="resumeTable">04.2013</td>-->
+                        <!--<td class="resumeTable">ЧП «Белоус»</td>-->
+                        <!--<td class="resumeTable">Технолог</td>-->
+                        <!--<td class="resumeTable">Разработка технологической-->
+                            <!--документации на изготовление индивидуальной корпусной-->
+                            <!--мебели</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="resumeTable">06.2013</td>-->
+                        <!--<td class="resumeTable">05.2015</td>-->
+                        <!--<td class="resumeTable">ЧП «Росошинский»</td>-->
+                        <!--<td class="resumeTable">Технолог</td>-->
+                        <!--<td class="resumeTable">Разработка технологической-->
+                            <!--документации на изготовление индивидуальной корпусной-->
+                            <!--мебели</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="resumeTable">10.2015</td>-->
+                        <!--<td class="resumeTable">-</td>-->
+                        <!--<td class="resumeTable">ООО НПП «МИТЭК»</td>-->
+                        <!--<td class="resumeTable">Инженер-проектировщик</td>-->
+                        <!--<td class="resumeTable">Разработка проектной документации </td>-->
+                    <!--</tr>-->
 
                     </tr>
                 </tbody>
@@ -394,12 +403,16 @@
         this.duty = duty;
     }
 
+    var jobs = [];
+
     function Task(dateStartTask, dateEndTask, taskName, taskValue) {
         this.dateStartTask = dateStartTask;
         this.dateEndTask = dateEndTask;
         this.taskName = taskName;
         this.taskValue = taskValue;
     }
+
+    var tasks = [];
 
     $(function () {
         console.log("start");
@@ -511,6 +524,14 @@
         })
 
         $("#btnAddJobToForm").click(function () {
+            var job = new Job($('#dateStart').val(),
+                $('#dateEnd').val(),
+                $('#jobName').val(),
+                $('#position').val(),
+                $('#duty').val(),
+            );
+
+            jobs.push(job)
             $("#addJobForm").hide();
         })
 
@@ -530,6 +551,12 @@
             $("#addTaskForm").hide();
         })
 
+        var resumeForm = new Vue({
+            el:'resumeForm',
+            data:{
+                jobs
+            }
+        })
 
     })
 </script>
