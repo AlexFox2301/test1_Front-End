@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="resumeVue.js"></script>
+
+    <link rel="stylesheet" href="resumeVue.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.9/dist/vue.js"></script>
+
+    <title>ResumeVue</title>
+</head>
+<body>
+
+<div class="row justify-content-md-center" id="resume">
+    <div class="col-xl-6" id="resumeForm">
+        <table id="resumeTable">
+            <thead>
+            <tr>
+                <th>Дата поступления</th>
+                <th>Дата увольнения</th>
+                <th>Наименование организации</th>
+                <th>Должность</th>
+                <th>Обязаности</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr v-for="job in jobs">
+                <td>{{job.dateStart}}</td>
+                <td>{{job.dateDismissal}}</td>
+                <td>{{job.nameCompany}}</td>
+                <td>{{job.position}}</td>
+                <td>{{job.duty}}</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-xl-4">
+                <!--<button class="btn btn-info"
+                            @clisk="createJob" value="Добавить"
+                            id="btnAddJob"></button>-->
+                <input id="btnAddJob" type="button"
+                       @click="createJob"
+                       value="Добавить">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-6 notActivity" id="addJobForm"
+         :class="{'activity' : isActive, 'notActivity : !isActive'}">
+        <div class="row">
+            <div class="col-xl-6">
+                <label for="dateStart">Дата поступления</label>
+            </div>
+            <div class="col-xl-6">
+                <input type="text" id="dateStart" placeholder="Дата поступления">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6">
+                <label for="dateDismissal">Дата увольнения</label>
+            </div>
+            <div class="col-xl-6">
+                <input type="text" id="dateDismissal" placeholder="Дата увольнения">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6">
+                <label for="nameCompany">Наименование компании</label>
+            </div>
+            <div class="col-xl-6">
+                <input type="text" id="nameCompany" placeholder="Наименование компании">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6">
+                <label for="position">Должность</label>
+            </div>
+            <div class="col-xl-6">
+                <input type="text" id="position" placeholder="Должность">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6">
+                <label for="duty">Обязанности</label>
+            </div>
+            <div class="col-xl-6">
+                <input type="text" id="duty" placeholder="Обязанности">
+            </div>
+        </div><div class="row">
+        <div class="col-xl-3">
+            <button class="btn btn-info" id="btnSaveJob">Сохранить</button>
+        </div>
+        <div class="col-xl-3">
+            <button class="btn btn-info" id="btnCancel">Отмена</button>
+        </div>
+    </div>
+    </div>
+
+
+</div>
+
+
+</body>
+</html>
