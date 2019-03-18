@@ -2,13 +2,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <script src="resumeVue.js"></script>
-
-    <link rel="stylesheet" href="resumeVue.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.9/dist/vue.js"></script>
-
+    <link rel="stylesheet" href="resumeVue.css">
     <title>ResumeVue</title>
 </head>
 <body>
@@ -28,34 +23,38 @@
 
             <tbody>
             <tr v-for="job in jobs">
-                <td>{{job.dateStart}}</td>
-                <td>{{job.dateDismissal}}</td>
-                <td>{{job.nameCompany}}</td>
-                <td>{{job.position}}</td>
-                <td>{{job.duty}}</td>
+                <td>{{job.dateStartJob}}</td>
+                <td>{{job.dateDismissalJob}}</td>
+                <td>{{job.nameCompanyJob}}</td>
+                <td>{{job.positionJobJob}}</td>
+                <td>{{job.dutyJob}}</td>
             </tr>
             </tbody>
         </table>
         <div class="row">
             <div class="col-xl-4">
-                <!--<button class="btn btn-info"
-                            @clisk="createJob" value="Добавить"
-                            id="btnAddJob"></button>-->
+               <!--<button class="btn btn-info"-->
+                            <!--@clisk="isActive = !isActive"-->
+                            <!--id="btnAddJob">Добавить</button>-->
                 <input id="btnAddJob" type="button"
-                       @click="createJob"
+                       @click="isActive = !isActive"
                        value="Добавить">
             </div>
         </div>
     </div>
 
-    <div class="col-xl-6 notActivity" id="addJobForm"
-         :class="{'activity' : isActive, 'notActivity : !isActive'}">
+    <!--<h2 v-if="isActive">Видно</h2></th>-->
+    <!--<span>{{isActive}}</span>-->
+
+    <div v-if="isActive" class="col-xl-6" id="addJobForm">
+         <!--:class="{'activity' : isActive, 'notActivity : !isA'}">-->
         <div class="row">
             <div class="col-xl-6">
                 <label for="dateStart">Дата поступления</label>
             </div>
             <div class="col-xl-6">
-                <input type="text" id="dateStart" placeholder="Дата поступления">
+                <input type="text" v-model="dateStart" id="dateStart" placeholder="Дата поступления">
+                <span>{{dateStart}}</span>
             </div>
         </div>
         <div class="row">
@@ -63,7 +62,8 @@
                 <label for="dateDismissal">Дата увольнения</label>
             </div>
             <div class="col-xl-6">
-                <input type="text" id="dateDismissal" placeholder="Дата увольнения">
+                <input type="text" v-model="dateDismissal" id="dateDismissal" placeholder="Дата увольнения">
+                <span>{{dateDismissal}}</span>
             </div>
         </div>
         <div class="row">
@@ -71,15 +71,17 @@
                 <label for="nameCompany">Наименование компании</label>
             </div>
             <div class="col-xl-6">
-                <input type="text" id="nameCompany" placeholder="Наименование компании">
+                <input type="text" v-model="nameCompany" id="nameCompany" placeholder="Наименование компании">
+                <span>{{nameCompany}}</span>
             </div>
         </div>
         <div class="row">
             <div class="col-xl-6">
-                <label for="position">Должность</label>
+                <label for="positionJob">Должность</label>
             </div>
             <div class="col-xl-6">
-                <input type="text" id="position" placeholder="Должность">
+                <input type="text" v-model="positionJob" id="positionJob" placeholder="Должность">
+                <span>{{positionJob}}</span>
             </div>
         </div>
         <div class="row">
@@ -87,20 +89,29 @@
                 <label for="duty">Обязанности</label>
             </div>
             <div class="col-xl-6">
-                <input type="text" id="duty" placeholder="Обязанности">
+                <input type="text" v-model="duty" id="duty" placeholder="Обязанности">
+                <span>{{duty}}</span>
             </div>
         </div><div class="row">
         <div class="col-xl-3">
-            <button class="btn btn-info" id="btnSaveJob">Сохранить</button>
+            <input class="btn btn-info" id="btnSaveJob" type="button"
+                   @click="createJob"
+                   value="Сохранить">
         </div>
         <div class="col-xl-3">
-            <button class="btn btn-info" id="btnCancel">Отмена</button>
+            <input class="btn btn-info" id="btnAddJobCancel" type="button"
+                   @click="cancelJob"
+                   value="Отмена">
         </div>
     </div>
     </div>
 
 
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.9/dist/vue.js"></script>
+<script type="text/javascript" src="resumeVue.js"></script>
 
 
 </body>
