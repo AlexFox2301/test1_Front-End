@@ -1,15 +1,3 @@
-// var job = {
-//     // var dateStart;
-//     // var dateDismissal;
-//     // var nameCompany;
-//     // var position;
-//     // var duty;
-// };
-// var jobs = [];
-// var isActive = false;
-
-// alert("Working1");
-
 var resume = new Vue({
     el:'#resume',
     data:{
@@ -57,15 +45,3 @@ var resume = new Vue({
         }
     }
 });
-
-
-
-// var addJobForm = new Vue({
-//     el:'#addJobForm',
-//     data:{
-//         job:{},
-//         jobs:[],
-//         // isActive: false,
-//     },
-//     method:{},
-// })

@@ -15,12 +15,17 @@
     background: #b3ffad;
 }
 
-td{
-    border: gray solid 1px;
+table{
+    width: 100%;
 }
 
 th{
     border: gray solid 3px;
     text-align: center;
+    padding: 5px;
 }
 
+td{
+    border: gray solid 1px;
+    padding: 3px;
+}
