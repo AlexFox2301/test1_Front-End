@@ -33,9 +33,6 @@
         </table>
         <div class="row">
             <div class="col-xl-4">
-                <!--<button class="btn btn-info"-->
-                <!--@clisk="isActive = !isActive"-->
-                <!--id="btnAddJob">Добавить</button>-->
                 <input id="btnAddJob" type="button"
                        @click="isActive = !isActive"
                        value="Добавить">
@@ -43,18 +40,16 @@
         </div>
     </div>
 
-    <!--<h2 v-if="isActive">Видно</h2></th>-->
-    <!--<span>{{isActive}}</span>-->
 
     <div v-if="isActive" class="col-xl-5" id="addJobForm">
-        <!--:class="{'activity' : isActive, 'notActivity : !isA'}">-->
+
         <div class="row">
             <div class="col-xl-6">
                 <label for="dateStart">Дата поступления</label>
             </div>
             <div class="col-xl-6">
                 <input type="text" v-model="dateStart" id="dateStart" placeholder="Дата поступления">
-                <span>{{dateStart}}</span>
+                <!--<span>{{dateStart}}</span>-->
             </div>
         </div>
         <div class="row">
@@ -63,7 +58,7 @@
             </div>
             <div class="col-xl-6">
                 <input type="text" v-model="dateDismissal" id="dateDismissal" placeholder="Дата увольнения">
-                <span>{{dateDismissal}}</span>
+                <!--<span>{{dateDismissal}}</span>-->
             </div>
         </div>
         <div class="row">
@@ -72,7 +67,7 @@
             </div>
             <div class="col-xl-6">
                 <input type="text" v-model="nameCompany" id="nameCompany" placeholder="Наименование компании">
-                <span>{{nameCompany}}</span>
+                <!--<span>{{nameCompany}}</span>-->
             </div>
         </div>
         <div class="row">
@@ -81,7 +76,7 @@
             </div>
             <div class="col-xl-6">
                 <input type="text" v-model="positionJob" id="positionJob" placeholder="Должность">
-                <span>{{positionJob}}</span>
+                <!--<span>{{positionJob}}</span>-->
             </div>
         </div>
         <div class="row">
@@ -90,7 +85,7 @@
             </div>
             <div class="col-xl-6">
                 <input type="text" v-model="duty" id="duty" placeholder="Обязанности">
-                <span>{{duty}}</span>
+                <!--<span>{{duty}}</span>-->
             </div>
         </div><div class="row">
         <div class="col-xl-3">

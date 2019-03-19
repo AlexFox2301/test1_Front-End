@@ -45,3 +45,7 @@ var resume = new Vue({
         }
     }
 });
+
+
+
+
